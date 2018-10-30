@@ -40,19 +40,34 @@
 // console.log(filteredNames) // => ['Rich', 'Ray']
 // // <---- DO NOT EDIT BETWEEN THESE LINES
 
+// const hazardWarningCreator = typeOfWarning => {
+//   let warningCounter = 0;
+//   return function(location) {
+//     warningCounter++;
+//     console.log(`"DANGER! There is a ${typeOfWarning} hazard at ${location}!"`);
+//     console.log(`"The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${warningCounter === 1 ? "time" : "times"} today!"`);
+//   }
+// }
 
-const hazardWarningCreator = typeOfWarning => {
-  let warningCounter = 0;
-  return function(location) {
-    warningCounter++;
-    console.log(`"DANGER! There is a ${typeOfWarning} hazard at ${location}!"`);
-    console.log(`"The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${warningCounter === 1 ? "time" : "times"} today!"`);
-  }
-}
+// const rocksWarning = hazardWarningCreator('Rocks on the Road');
+// const birdsWarning = hazardWarningCreator('There\'s birds');
+// const monkeysWarning = hazardWarningCreator('Tons of monkeys');
 
-const rocksWarning = hazardWarningCreator('Rocks on the Road');
-const birdsWarning = hazardWarningCreator('There\'s birds');
-const monkeysWarning = hazardWarningCreator('Tons of monkeys');
+// rocksWarning('Main St and Pacific Ave');
+// rocksWarning('Centinela Ave and Olympic Blvd');
 
-rocksWarning('Main St and Pacific Ave');
-rocksWarning('Centinela Ave and Olympic Blvd');
+const turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]
+
+let filteredTurtleMoves = turtleMovements.filter(move => {
+  return move[0] >= 0 && move[1] >= 0
+})
+// console.log(filteredTurtleMoves)
+
+let newArray = filteredTurtleMoves.map(move => {
+  return move[0] + move[1]
+})
+// console.log(newArray)
+
+newArray.forEach(moves => {
+  console.log(moves)
+})
